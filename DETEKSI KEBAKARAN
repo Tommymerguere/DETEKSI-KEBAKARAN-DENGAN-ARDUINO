@@ -5,7 +5,7 @@
 
 // === Konstanta dan Pin ===
 #define DHTPIN 2
-#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 #define MQ2PIN A1
 #define FLAME_PIN A0
 #define BUZZER_PIN 8
@@ -118,9 +118,11 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print("Gas: ");
   lcd.print(gas);
-
-  lcd.setCursor(0, 1);
-  lcd.print("Api: ");
+  lcd.print("| Api: ");
   lcd.print(flame);
+  
+  lcd.setCursor(0, 1);
+  lcd.print("Status: ");
+  lcd.print(status);
   delay(2000);
 }
